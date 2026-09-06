@@ -5,6 +5,14 @@
   let lang=(requested==='ja'||requested==='en')?requested:(localStorage.getItem(key)||'en');
   if(lang!=='ja') lang='en';
 
+  // Global visual refinement shared by English and Japanese.
+  if(!document.querySelector('link[href="assets/refinement.css"]')){
+    const refinement=document.createElement('link');
+    refinement.rel='stylesheet';
+    refinement.href='assets/refinement.css';
+    document.head.appendChild(refinement);
+  }
+
   const editorial=document.createElement('style');
   editorial.id='ja-editorial-style';
   editorial.textContent=`
@@ -71,6 +79,30 @@
     });
   }
 
+  function setImage(selector,src,altEn,altJa){
+    document.querySelectorAll(selector).forEach(img=>{
+      if(img.tagName!=='IMG') return;
+      img.src=src;
+      img.removeAttribute('srcset');
+      if(altEn) img.dataset.altEn=altEn;
+      if(altJa) img.dataset.altJa=altJa;
+      img.alt=lang==='ja'?(altJa||altEn):(altEn||img.alt);
+      img.decoding='async';
+    });
+  }
+
+  function applyHighResolutionPhotography(){
+    const fish='assets/images/reef-fish-2048.avif';
+    const healthy='assets/images/reef-healthy-2048.avif';
+    setImage('.hero>img',fish,'Reef fishes above branching corals in Okinawa, Japan','沖縄の枝状サンゴ群落とサンゴ礁魚類');
+    setImage('.stories article:nth-child(1) img',healthy,'Structurally complex coral reef habitat in Okinawa','沖縄の立体的で健全なサンゴ礁生息場');
+    setImage('.stories article:nth-child(2) img',fish,'Reef fishes above branching corals','枝状サンゴ上を泳ぐサンゴ礁魚類');
+    setImage('.field-grid a:nth-child(1) img',fish,'Coral reef and fishes in Okinawa','沖縄のサンゴ礁と魚類');
+    setImage('.field-grid a:nth-child(2) img',healthy,'Healthy coral reef in the Ryukyu Archipelago','琉球列島の健全なサンゴ礁');
+    setImage('.field-notes article:nth-child(1) img',fish,'Reef fish field survey habitat','サンゴ礁魚類調査のフィールド');
+    setImage('.field-notes article:nth-child(2) img',healthy,'Healthy coral reef habitat','健全なサンゴ礁生息場');
+  }
+
   const apply=()=>{
     document.documentElement.lang=lang;
     document.documentElement.dataset.lang=lang;
@@ -96,6 +128,7 @@
   };
 
   document.addEventListener('DOMContentLoaded',()=>{
+    applyHighResolutionPhotography();
     apply();
     const button=document.getElementById('lang');
     if(button) button.addEventListener('click',()=>{lang=lang==='en'?'ja':'en';apply();});
