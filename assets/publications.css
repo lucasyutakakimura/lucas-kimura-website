@@ -20,9 +20,9 @@
 
 .pub-photo-card{position:relative;display:block;overflow:hidden;background:#0d2024;color:#fff;aspect-ratio:4/5;isolation:isolate;box-shadow:0 12px 34px rgba(8,26,29,.10);transition:transform .28s ease,box-shadow .28s ease}
 .pub-photo-card.landscape{aspect-ratio:1250/428;background:#071719}
-.pub-photo-card img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center;image-rendering:auto;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
+.pub-photo-card>img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center;image-rendering:auto;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
 /* Figures and panoramic publication visuals are never cropped. */
-.pub-photo-card.landscape img{object-fit:contain;object-position:center center;background:#071719}
+.pub-photo-card.landscape>img{object-fit:contain;object-position:center center;background:#071719}
 .pub-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,18,21,.02) 0%,rgba(2,18,21,.04) 47%,rgba(2,18,21,.72) 78%,rgba(2,18,21,.93) 100%);z-index:1}
 .pub-photo-card.landscape .pub-card-shade{background:linear-gradient(180deg,rgba(2,18,21,0) 0%,rgba(2,18,21,0) 58%,rgba(2,18,21,.62) 82%,rgba(2,18,21,.86) 100%)}
 .pub-card-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 22px 20px;transform:translateY(0);transition:transform .25s ease}
@@ -30,10 +30,17 @@
 .pub-card-copy h3{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(16px,1.45vw,23px);font-weight:600;line-height:1.23;letter-spacing:-.025em}
 .pub-card-copy h3 em{font-style:italic}
 .pub-card-copy p{margin:10px 0 0;font-size:10.5px;line-height:1.45;color:rgba(255,255,255,.74)}
-.pub-card-arrow{position:absolute;right:16px;top:15px;z-index:3;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(4,28,32,.38);border:1px solid rgba(255,255,255,.42);backdrop-filter:blur(8px);font-size:15px;transition:transform .25s ease,background .25s ease}
+.pub-card-arrow{position:absolute;right:16px;top:15px;z-index:5;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(4,28,32,.38);border:1px solid rgba(255,255,255,.42);backdrop-filter:blur(8px);font-size:15px;transition:transform .25s ease,background .25s ease}
+
+/* Journal branding: compact, image-first, Bellwood-style identification without competing with the paper photo. */
+.pub-journal-logo{position:absolute;z-index:4;left:14px;top:14px;width:min(58%,210px);height:48px;overflow:hidden;background:#12bbb9;box-shadow:0 8px 24px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.28)}
+.pub-journal-logo img{position:static!important;width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;object-position:left center!important;transform:none!important;filter:none!important}
+.pub-journal-logo-wide{width:min(43%,340px);height:54px;left:18px;top:18px}
+.galaxea-card:hover .pub-journal-logo img{transform:none!important;filter:none!important}
+
 .pub-photo-card:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(2,19,22,.18)}
-.pub-photo-card:hover img{transform:scale(1.025);filter:saturate(1.04) contrast(1.03)}
-.pub-photo-card.landscape:hover img{transform:scale(1.005);filter:saturate(1.015) contrast(1.01)}
+.pub-photo-card:hover>img{transform:scale(1.025);filter:saturate(1.04) contrast(1.03)}
+.pub-photo-card.landscape:hover>img{transform:scale(1.005);filter:saturate(1.015) contrast(1.01)}
 .pub-photo-card:hover .pub-card-arrow{transform:translate(2px,-2px);background:#8fdce5;color:#0b252a}
 .pub-photo-card:hover .pub-card-copy{transform:translateY(-3px)}
 
@@ -60,6 +67,7 @@ html[data-lang="ja"] .publication-intro p{line-height:1.9}
   .publication-grid,.publication-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}
   .publication-grid.single-wide{grid-template-columns:1fr}
   .pub-photo-card.landscape{aspect-ratio:1250/428}
+  .pub-journal-logo-wide{width:min(52%,300px)}
   .profile-link-grid{grid-template-columns:1fr}
 }
 @media(max-width:560px){
@@ -72,5 +80,7 @@ html[data-lang="ja"] .publication-intro p{line-height:1.9}
   .pub-card-copy{padding:18px 18px 17px}
   .pub-card-copy h3{font-size:18px}
   html[data-lang="ja"] .pub-card-copy h3{font-size:17px}
+  .pub-journal-logo{width:170px;height:42px;left:12px;top:12px}
+  .pub-journal-logo-wide{width:190px;height:44px;left:12px;top:12px}
   .profiles-section{padding-left:5vw;padding-right:5vw}
 }
