@@ -1,0 +1,36 @@
+/* Typography & visual refinement — Sep 2026 */
+:root{
+  --font-body:'Inter','Noto Sans JP',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Inter','Noto Sans JP',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-editorial:'Noto Serif JP',Georgia,'Times New Roman',serif;
+}
+body{font-family:var(--font-body);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;letter-spacing:-.008em}
+.brand,.top nav,.label,.kicker,.field,.section-head h2,.stories h3,.pub-year h2,.talk-archive h2,.field-grid span,.cv h3{font-family:var(--font-display)!important}
+.brand{font-weight:650!important;letter-spacing:-.02em!important}
+.top nav{letter-spacing:.035em!important;font-weight:600!important;text-transform:none!important}
+.field{font-weight:650!important;letter-spacing:-.035em!important;line-height:1.05!important}
+.hero h1{font-family:var(--font-display)!important;font-weight:500!important;letter-spacing:-.04em!important}
+.statement{font-family:var(--font-display)!important;font-weight:650!important;letter-spacing:-.04em!important;line-height:1.15!important}
+.intro h2,.presentation-preview h2{font-family:var(--font-display)!important;font-weight:650!important;letter-spacing:-.05em!important}
+.intro h2 em,.quote p{font-family:var(--font-editorial)!important;font-style:normal}
+.section-head h2{font-weight:650!important;letter-spacing:-.055em!important;text-transform:none!important}
+.stories h3{font-weight:650!important;letter-spacing:-.04em!important;text-transform:none!important;line-height:1.05!important}
+.paper-list h3,.talk h3,.news-list h3,.publication-cards h3{font-family:var(--font-display)!important;font-weight:600!important;letter-spacing:-.025em!important}
+.sub-hero h1{font-family:var(--font-display)!important;font-weight:650!important;letter-spacing:-.055em!important;text-transform:none!important}
+.about-grid h2{font-family:var(--font-editorial)!important;font-weight:600!important;letter-spacing:-.05em!important;line-height:1.05!important}
+body,.cols,.stories p,.sub-hero p,.field-notes p,.about-grid p,.contact p{line-height:1.78}
+html[data-lang='ja'] body{font-family:'Noto Sans JP',var(--font-body);font-feature-settings:'palt' 1;line-break:strict;word-break:normal;letter-spacing:.01em}
+html[data-lang='ja'] .brand,html[data-lang='ja'] .top nav,html[data-lang='ja'] .label,html[data-lang='ja'] .kicker,html[data-lang='ja'] .field,html[data-lang='ja'] .section-head h2,html[data-lang='ja'] .stories h3,html[data-lang='ja'] .pub-year h2,html[data-lang='ja'] .talk-archive h2,html[data-lang='ja'] .field-grid span,html[data-lang='ja'] .cv h3,html[data-lang='ja'] .hero h1,html[data-lang='ja'] .statement,html[data-lang='ja'] .intro h2,html[data-lang='ja'] .presentation-preview h2,html[data-lang='ja'] .paper-list h3,html[data-lang='ja'] .talk h3,html[data-lang='ja'] .news-list h3,html[data-lang='ja'] .publication-cards h3,html[data-lang='ja'] .sub-hero h1{font-family:'Noto Sans JP',sans-serif!important}
+html[data-lang='ja'] .intro h2 em,html[data-lang='ja'] .quote p,html[data-lang='ja'] .about-grid h2{font-family:'Noto Serif JP',serif!important}
+html[data-lang='ja'] .field{font-size:clamp(30px,3.7vw,58px)!important;line-height:1.2!important;letter-spacing:-.04em!important}
+html[data-lang='ja'] .statement{font-size:clamp(25px,3vw,44px)!important;line-height:1.42!important;letter-spacing:-.045em!important}
+html[data-lang='ja'] .intro h2{font-size:clamp(36px,4.7vw,70px)!important;line-height:1.34!important}
+html[data-lang='ja'] .section-head h2{line-height:1.16!important}
+html[data-lang='ja'] .stories h3{line-height:1.28!important}
+html[data-lang='ja'] .paper-list h3,html[data-lang='ja'] .talk h3,html[data-lang='ja'] .news-list h3{line-height:1.58!important}
+html[data-lang='ja'] .quote p{line-height:1.5!important;letter-spacing:-.04em!important}
+.hero>img,.stories img,.field-grid img,.field-notes img{image-rendering:auto;filter:none!important}
+.hero>img{object-position:center 48%!important}
+.stories article>img,.field-grid img,.field-notes img{transform:translateZ(0);backface-visibility:hidden}
+.hero .shade{background:linear-gradient(90deg,rgba(3,18,21,.76) 0%,rgba(3,18,21,.46) 42%,rgba(3,18,21,.08) 78%),linear-gradient(0deg,rgba(3,18,21,.38),transparent 48%)!important}
+@media(max-width:700px){html[data-lang='ja'] .field{font-size:clamp(28px,8vw,40px)!important}html[data-lang='ja'] .statement{font-size:clamp(22px,6.1vw,31px)!important}html[data-lang='ja'] .intro h2{font-size:clamp(30px,8vw,44px)!important}}
