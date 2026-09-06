@@ -1,28 +1,22 @@
 (()=>{
-  const visuals=[
-    {
-      selector:'[data-galaxea-visual]',
-      parts:[
-        'assets/images/publications/galaxea.00.part',
-        'assets/images/publications/galaxea.01.part',
-        'assets/images/publications/galaxea.02.part',
-        'assets/images/publications/galaxea.03.part',
-        'assets/images/publications/galaxea.04.part',
-        'assets/images/publications/galaxea.05.part',
-        'assets/images/publications/galaxea.06.part',
-        'assets/images/publications/galaxea.07.part',
-        'assets/images/publications/galaxea.08.part',
-        'assets/images/publications/galaxea.09.part',
-        'assets/images/publications/galaxea.10a.part',
-        'assets/images/publications/galaxea.10b.part',
-        'assets/images/publications/galaxea.11.part'
-      ]
-    },
-    {
-      selector:'[data-galaxea-prepost]',
-      parts:Array.from({length:6},(_,i)=>`assets/images/publications/reefcomparison.${String(i).padStart(2,'0')}.part`)
-    }
-  ];
+  const galaxeaVisual={
+    selector:'[data-galaxea-visual]',
+    parts:[
+      'assets/images/publications/galaxea.00.part',
+      'assets/images/publications/galaxea.01.part',
+      'assets/images/publications/galaxea.02.part',
+      'assets/images/publications/galaxea.03.part',
+      'assets/images/publications/galaxea.04.part',
+      'assets/images/publications/galaxea.05.part',
+      'assets/images/publications/galaxea.06.part',
+      'assets/images/publications/galaxea.07.part',
+      'assets/images/publications/galaxea.08.part',
+      'assets/images/publications/galaxea.09.part',
+      'assets/images/publications/galaxea.10a.part',
+      'assets/images/publications/galaxea.10b.part',
+      'assets/images/publications/galaxea.11.part'
+    ]
+  };
 
   const objectUrls=[];
 
@@ -31,36 +25,46 @@
     const style=document.createElement('style');
     style.id='galaxea-field-figure-styles';
     style.textContent=`
-      .galaxea-field-figure{margin:28px 0 26px;padding:14px;background:#fff;border:1px solid #ccd8d6;box-shadow:0 15px 36px rgba(8,31,35,.10)}
-      .galaxea-field-figure__label{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 10px;color:#547174;font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
-      .galaxea-field-figure__label span:last-child{color:#2f7d86}
-      .galaxea-field-figure img{display:block;width:100%;height:auto;aspect-ratio:1250/428;object-fit:cover;background:#d8e4e4}
-      .galaxea-field-figure figcaption{margin:12px 1px 0;padding-top:11px;border-top:1px solid #dbe2df;color:#596869;font-size:12px;line-height:1.72}
-      html[data-lang="ja"] .galaxea-field-figure__label{text-transform:none;letter-spacing:.04em}
-      html[data-lang="ja"] .galaxea-field-figure figcaption{line-height:1.9}
-      @media(max-width:720px){.galaxea-field-figure{margin:23px 0;padding:9px}.galaxea-field-figure__label{align-items:flex-start;flex-direction:column;gap:3px}.galaxea-field-figure figcaption{font-size:11px}}
+      .galaxea-field-figure{max-width:1260px;margin:34px auto 0;padding:18px;background:#f4f1ea;color:#102023;border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 75px rgba(0,0,0,.18)}
+      .galaxea-field-figure__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:4px 2px 14px}
+      .galaxea-field-figure__kicker{margin:0;color:#327986;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+      .galaxea-field-figure__transition{margin:0;color:#244447;font-size:12px;font-weight:700;letter-spacing:.05em}
+      .galaxea-field-figure a{display:block;overflow:hidden;background:#d8e4e4}
+      .galaxea-field-figure img{display:block;width:100%;height:auto;aspect-ratio:1502/512;object-fit:cover;object-position:center;background:#d8e4e4;transition:transform .35s ease}
+      .galaxea-field-figure a:hover img{transform:scale(1.006)}
+      .galaxea-field-figure figcaption{margin:15px 2px 1px;padding-top:14px;border-top:1px solid #d4ddda;color:#596869;font-size:12px;line-height:1.78}
+      html[data-lang="ja"] .galaxea-field-figure__kicker{text-transform:none;letter-spacing:.04em}
+      html[data-lang="ja"] .galaxea-field-figure figcaption{line-height:1.95}
+      @media(max-width:720px){
+        .galaxea-field-figure{margin-top:22px;padding:10px}
+        .galaxea-field-figure__head{align-items:flex-start;flex-direction:column;gap:4px;padding:3px 1px 9px}
+        .galaxea-field-figure img{aspect-ratio:auto}
+        .galaxea-field-figure figcaption{font-size:11px;margin-top:10px;padding-top:10px}
+      }
     `;
     document.head.appendChild(style);
   }
 
   function ensurePrePostFigure(){
     if(document.querySelector('.galaxea-field-figure')) return;
-    const summary=document.querySelector('#pub-2024 .pub-feature-copy .summary');
-    if(!summary) return;
+    const feature=document.querySelector('#pub-2024 .pub-feature');
+    if(!feature) return;
 
     const figure=document.createElement('figure');
     figure.className='galaxea-field-figure';
     figure.innerHTML=`
-      <div class="galaxea-field-figure__label">
-        <span><span data-en>Field evidence</span><span data-ja>現場の変化</span></span>
-        <span>Pre → Post Typhoon Khanun</span>
+      <div class="galaxea-field-figure__head">
+        <p class="galaxea-field-figure__kicker"><span data-en>Field evidence · Kakinouchi</span><span data-ja>現場写真 · 垣ノ内</span></p>
+        <p class="galaxea-field-figure__transition"><span data-en>Before → After Typhoon Khanun</span><span data-ja>台風Khanun 通過前 → 通過後</span></p>
       </div>
-      <img data-galaxea-prepost src="assets/images/reef-hero-hq.avif" alt="Representative photographs of the coral reef in Kakinouchi before and after Typhoon Khanun">
+      <a href="https://www.jstage.jst.go.jp/article/galaxea/26/1/26_G26N-3/_article/-char/ja/" target="_blank" rel="noopener" aria-label="Open the Galaxea paper on J-STAGE">
+        <img src="assets/images/publications/galaxea-prepost.png" loading="lazy" decoding="async" alt="Representative photographs of the coral reef at Kakinouchi before and after Typhoon Khanun">
+      </a>
       <figcaption>
-        <span data-en><strong>Fig. 3.</strong> Representative photographs of the coral reef in Kakinouchi: (A) before and (B) after Typhoon Khanun. Following the typhoon, the reef visibly shifted from a topographically complex coral habitat toward a flatter, rubble-dominated seascape.</span>
-        <span data-ja><strong>Fig. 3.</strong> 垣ノ内のサンゴ礁景観。（A）台風Khanun通過前、（B）通過後。台風後には、立体的で複雑なサンゴ群集から、瓦礫が卓越するより平坦な景観への明瞭な変化が確認されました。</span>
+        <span data-en><strong>Field comparison.</strong> Representative reef photographs from Kakinouchi before (A) and after (B) Typhoon Khanun. The paired images provide a direct visual context for the ecological and acoustic changes reported in the study.</span>
+        <span data-ja><strong>現場比較。</strong> 垣ノ内における台風Khanun通過前（A）と通過後（B）の代表的なサンゴ礁景観。本研究で報告した生態学的・音響学的変化を、現場の景観変化とあわせて視覚的に示しています。</span>
       </figcaption>`;
-    summary.insertAdjacentElement('afterend',figure);
+    feature.insertAdjacentElement('afterend',figure);
   }
 
   async function build(parts){
@@ -81,13 +85,11 @@
   async function apply(){
     installFigureStyles();
     ensurePrePostFigure();
-    for(const visual of visuals){
-      try{
-        const url=await build(visual.parts);
-        document.querySelectorAll(visual.selector).forEach(img=>{img.src=url;});
-      }catch(error){
-        console.warn(`Publication visual could not be assembled for ${visual.selector}; fallback image remains active.`,error);
-      }
+    try{
+      const url=await build(galaxeaVisual.parts);
+      document.querySelectorAll(galaxeaVisual.selector).forEach(img=>{img.src=url;});
+    }catch(error){
+      console.warn('Galaxea publication visual could not be assembled; fallback image remains active.',error);
     }
   }
 
