@@ -1,0 +1,95 @@
+/* Editorial polish + exact bilingual parity layer */
+:root{
+  --lyk-deep:#061619;
+  --lyk-deep-2:#0a2226;
+  --lyk-paper:#f5f1e8;
+  --lyk-paper-2:#ece5d8;
+  --lyk-aqua:#9ddfe6;
+  --lyk-ink:#0d2225;
+}
+
+/* Critical language rendering fix: each language has the same DOM and layout. */
+html[data-lang="en"] [data-ja]{display:none!important}
+html[data-lang="ja"] [data-en]{display:none!important}
+html[data-lang="en"] [data-en]{display:revert!important}
+html[data-lang="ja"] [data-ja]{display:revert!important}
+
+html[data-lang="ja"] body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  font-feature-settings:'palt' 1;
+  letter-spacing:.005em;
+}
+html[data-lang="ja"] p,
+html[data-lang="ja"] .statement,
+html[data-lang="ja"] .sub-hero p,
+html[data-lang="ja"] .about-grid p,
+html[data-lang="ja"] .contact p,
+html[data-lang="ja"] .stories p,
+html[data-lang="ja"] .field-notes p{
+  line-height:1.85;
+  text-wrap:pretty;
+}
+html[data-lang="ja"] .top nav{
+  text-transform:none;
+  letter-spacing:.045em;
+  font-weight:600;
+}
+html[data-lang="ja"] .field,
+html[data-lang="ja"] .sub-hero h1,
+html[data-lang="ja"] .section-head h2,
+html[data-lang="ja"] .stories h3,
+html[data-lang="ja"] .pub-year h2,
+html[data-lang="ja"] .talk-archive h2,
+html[data-lang="ja"] .field-notes h2,
+html[data-lang="ja"] .cv h3{
+  font-family:'Noto Sans JP',sans-serif;
+  text-transform:none;
+  letter-spacing:-.035em;
+}
+html[data-lang="ja"] .quote p,
+html[data-lang="ja"] .about-grid h2{
+  font-family:'Noto Serif JP','Yu Mincho',serif;
+  letter-spacing:-.035em;
+}
+html[data-lang="ja"] .label,
+html[data-lang="ja"] .kicker,
+html[data-lang="ja"] .profile-dock-label>span,
+html[data-lang="ja"] .research-tags>span{
+  font-family:'Noto Sans JP',sans-serif;
+  text-transform:none;
+  letter-spacing:.08em;
+}
+
+/* Softer, premium marine palette without changing the information architecture. */
+.paper,.home-page .intro,.presentation-preview{background:linear-gradient(180deg,#f7f3eb 0%,var(--lyk-paper) 100%)}
+.dark,.top.solid{background:linear-gradient(180deg,#061619 0%,#092126 100%)}
+.news{background:linear-gradient(180deg,#d6edf0 0%,#c9e5e9 100%)}
+.hero>img,.stories img,.field-grid img,.field-notes img{filter:saturate(1.02) contrast(1.015);image-rendering:auto}
+.hero .shade{background:linear-gradient(90deg,rgba(2,15,18,.84) 0%,rgba(2,15,18,.53) 39%,rgba(2,15,18,.08) 76%),linear-gradient(0deg,rgba(2,15,18,.55),transparent 48%,rgba(2,15,18,.14) 100%)}
+
+.profile-dock{box-shadow:0 28px 80px rgba(1,15,18,.22)}
+.profile-card{backdrop-filter:blur(10px)}
+.paper-list>a,.stories article,.field-notes article{box-shadow:0 20px 55px rgba(3,18,21,.10)}
+
+/* Japanese keeps the exact same grid, but uses more natural line rhythm. */
+html[data-lang="ja"] .home-page .field{line-height:1.18}
+html[data-lang="ja"] .home-page .statement{line-height:1.45;max-width:980px}
+html[data-lang="ja"] .home-page .intro h2{line-height:1.28;letter-spacing:-.045em}
+html[data-lang="ja"] .home-page #research .section-head h2{line-height:1.12}
+html[data-lang="ja"] .home-page .stories h3{line-height:1.25}
+html[data-lang="ja"] .home-page .news-list h3{line-height:1.55}
+html[data-lang="ja"] .home-page .paper-list h3{line-height:1.55}
+html[data-lang="ja"] .home-page .presentation-preview h2{line-height:1.35}
+html[data-lang="ja"] .home-page .quote p{line-height:1.45}
+
+/* Subpages: balanced Japanese display typography while preserving English layout. */
+html[data-lang="ja"] .sub-hero h1{line-height:1.05}
+html[data-lang="ja"] .publication-cards h3{line-height:1.6}
+html[data-lang="ja"] .talk-archive h3{line-height:1.6}
+html[data-lang="ja"] .field-notes h2{line-height:1.35}
+html[data-lang="ja"] .about-grid h2{line-height:1.22}
+
+@media(max-width:900px){
+  html[data-lang="ja"] .home-page .statement{line-height:1.55}
+  html[data-lang="ja"] .sub-hero h1{font-size:clamp(54px,15vw,104px)}
+}
