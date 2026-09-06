@@ -3,7 +3,7 @@
 .about-page .sub-hero{padding-bottom:72px}
 .about-page .sub-hero h1{font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(64px,9vw,132px);font-weight:600;letter-spacing:-.06em;text-transform:none;line-height:.92}
 .about-page .sub-hero p{max-width:860px;line-height:1.8}
-.about-editorial{max-width:1450px;margin:0 auto;padding:96px 7vw 72px;display:grid;grid-template-columns:minmax(0,820px) minmax(240px,300px);justify-content:space-between;gap:90px;align-items:start}
+.about-editorial{max-width:1450px;margin:0 auto;padding:96px 7vw 78px;display:grid;grid-template-columns:minmax(0,820px) minmax(240px,300px);justify-content:space-between;gap:90px;align-items:start}
 .about-copy .eyebrow{margin:0 0 20px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#33717a}
 .about-copy h2{margin:0 0 42px;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(48px,6vw,86px);font-weight:600;letter-spacing:-.065em;line-height:1.02;max-width:790px}
 .about-copy p{margin:0 0 25px;max-width:780px;font-size:18px;line-height:1.95;color:#3e4d4f}
@@ -15,24 +15,43 @@
 .about-sidebar h3{margin:0 0 10px;font-family:Inter,'Noto Sans JP',sans-serif;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#5d6d6c}
 .about-sidebar p{margin:0;font-size:14px;line-height:1.8;color:#314345}
 .about-sidebar a{border-bottom:1px solid rgba(16,32,35,.35)}
-.record-section{background:#0a1a1d;color:#edf5f2;padding:90px 7vw 105px}
-.record-inner{max-width:1450px;margin:0 auto}
-.record-head{display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:end;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.2)}
-.record-head span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#91dbe4}
-.record-head h2{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(44px,5.8vw,84px);font-weight:600;letter-spacing:-.055em;line-height:1.05}
-.year-list{margin-top:8px}
-.year-row{display:grid;grid-template-columns:180px 1fr;gap:40px;padding:34px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-.year-row>time{font-family:Inter,sans-serif;font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-.04em;color:#a7e3ea}
-.year-items{display:grid;gap:20px}
-.year-item{display:grid;grid-template-columns:minmax(130px,180px) 1fr;gap:24px}
-.year-item b{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#88a5a4}
-.year-item div{font-size:16px;line-height:1.72;color:#d7e2df}
-.year-item strong{display:block;margin-bottom:4px;font-size:18px;color:#fff;font-weight:600}
-html[data-lang="ja"] .about-page .sub-hero h1,html[data-lang="ja"] .about-copy h2,html[data-lang="ja"] .record-head h2{font-family:'Noto Sans JP',sans-serif;letter-spacing:-.055em}
+
+/* Career — intentionally separate from publications, awards and presentations */
+.career-section{background:#e8eeeb;padding:94px 7vw 112px;border-top:1px solid #c5cfca}
+.career-inner{max-width:1450px;margin:0 auto}
+.career-head{display:grid;grid-template-columns:170px 1fr;gap:44px;align-items:end;padding-bottom:34px;border-bottom:1px solid #9eaaa5}
+.career-head>span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#32717a}
+.career-head h2{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(46px,5.8vw,82px);font-weight:600;letter-spacing:-.06em;line-height:1.02;color:#102023}
+.career-list{margin-top:2px}
+.career-row{display:grid;grid-template-columns:170px 1fr;gap:44px;padding:38px 0;border-bottom:1px solid #b8c3be}
+.career-row>time{font-family:Inter,sans-serif;font-size:clamp(24px,2.7vw,39px);font-weight:600;letter-spacing:-.045em;line-height:1.05;color:#2f6972}
+.career-entry{max-width:920px}
+.career-entry .career-type{display:block;margin-bottom:8px;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#6b7d79}
+.career-entry h3{margin:0 0 7px;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(21px,2vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.35;color:#102023}
+.career-entry p{margin:0;font-size:15px;line-height:1.8;color:#52615f}
+.career-entry+.career-entry{margin-top:26px;padding-top:26px;border-top:1px solid rgba(117,135,129,.28)}
+.career-note{margin:30px 0 0 214px;max-width:760px;font-size:13px;line-height:1.8;color:#6b7775}
+
+html[data-lang="ja"] .about-page .sub-hero h1,html[data-lang="ja"] .about-copy h2,html[data-lang="ja"] .career-head h2,html[data-lang="ja"] .career-entry h3{font-family:'Noto Sans JP',sans-serif;letter-spacing:-.055em}
 html[data-lang="ja"] .about-copy h2{line-height:1.3;font-size:clamp(42px,5.25vw,76px)}
 html[data-lang="ja"] .about-copy p{line-height:2.05}
 html[data-lang="ja"] .about-copy p.lead{line-height:2}
-html[data-lang="ja"] .about-copy .eyebrow,html[data-lang="ja"] .about-sidebar h3,html[data-lang="ja"] .record-head span,html[data-lang="ja"] .year-item b{text-transform:none;letter-spacing:.06em}
-html[data-lang="ja"] .record-head h2{line-height:1.28}
-@media(max-width:900px){.about-editorial{grid-template-columns:1fr;gap:55px;padding-top:72px}.about-sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.record-head,.year-row{grid-template-columns:1fr;gap:14px}.year-item{grid-template-columns:1fr;gap:4px}.year-row>time{font-size:34px}}
-@media(max-width:580px){.about-sidebar{grid-template-columns:1fr}.about-copy p{font-size:16px}.about-copy p.lead{font-size:18px}.about-photo-wide{aspect-ratio:4/3}.record-section{padding-left:6vw;padding-right:6vw}}
+html[data-lang="ja"] .about-copy .eyebrow,html[data-lang="ja"] .about-sidebar h3,html[data-lang="ja"] .career-head>span,html[data-lang="ja"] .career-entry .career-type{text-transform:none;letter-spacing:.06em}
+html[data-lang="ja"] .career-head h2{line-height:1.25}
+html[data-lang="ja"] .career-entry h3{line-height:1.55}
+html[data-lang="ja"] .career-entry p{line-height:1.95}
+
+@media(max-width:900px){
+  .about-editorial{grid-template-columns:1fr;gap:55px;padding-top:72px}
+  .about-sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  .career-head,.career-row{grid-template-columns:1fr;gap:14px}
+  .career-row>time{font-size:32px}
+  .career-note{margin-left:0}
+}
+@media(max-width:580px){
+  .about-sidebar{grid-template-columns:1fr}
+  .about-copy p{font-size:16px}
+  .about-copy p.lead{font-size:18px}
+  .about-photo-wide{aspect-ratio:4/3}
+  .career-section{padding-left:6vw;padding-right:6vw}
+}
