@@ -1,0 +1,47 @@
+/* Publications — Bellwood-inspired year-by-year visual archive */
+.publications-page{background:#f3f1ea;color:#102023}
+.publications-page .sub-hero{padding-bottom:70px}
+.publications-page .sub-hero h1{font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(64px,9vw,132px);font-weight:600;letter-spacing:-.06em;text-transform:none;line-height:.94}
+.publication-year-section{padding:92px 6vw 105px;border-top:1px solid #c8ceca}
+.publication-year-section:nth-of-type(even){background:#0a191c;color:#eef5f2}
+.publication-year-inner{max-width:1500px;margin:0 auto}
+.publication-year-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:44px}
+.publication-year-head h2{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(44px,6vw,86px);font-weight:600;letter-spacing:-.055em;line-height:1}
+.publication-year-head span{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#537070}
+.publication-year-section:nth-of-type(even) .publication-year-head span{color:#9bdde6}
+.publication-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.pub-visual-card{display:block;border:1px solid rgba(16,32,35,.16);background:#fff;color:#102023;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.pub-visual-card:hover{transform:translateY(-5px);box-shadow:0 24px 55px rgba(2,19,22,.14);border-color:rgba(16,32,35,.3)}
+.publication-year-section:nth-of-type(even) .pub-visual-card{background:#102a2e;color:#f4f8f6;border-color:rgba(255,255,255,.14)}
+.pub-art{aspect-ratio:4/5;position:relative;overflow:hidden;background:#c5dce4;isolation:isolate}
+.pub-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.pub-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,25,29,.02) 0%,rgba(4,25,29,.12) 45%,rgba(4,25,29,.82) 100%);z-index:-1}
+.pub-art-header{position:absolute;top:0;left:0;right:0;padding:20px 22px;background:rgba(235,246,249,.94);color:#0a3138;border-bottom:4px solid #5fa9b5}
+.pub-art-header strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:clamp(25px,2.4vw,36px);line-height:1}
+.pub-art-header small{display:block;margin-top:5px;font:600 10px/1.4 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.pub-art-body{position:absolute;left:24px;right:24px;bottom:24px;color:#fff}
+.pub-art-tag{display:inline-block;padding:7px 10px;margin-bottom:14px;background:#9bdde6;color:#0a2b30;font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.pub-art-body h3{margin:0 0 16px;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(21px,2vw,29px);font-weight:650;line-height:1.15;letter-spacing:-.035em}
+.pub-art-body p{margin:0;font-size:12px;line-height:1.55;color:#e2efec}
+.pub-info{padding:24px 24px 28px}
+.pub-info .journal{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4c7074}
+.publication-year-section:nth-of-type(even) .pub-info .journal{color:#99cbd1}
+.pub-info h3{margin:10px 0 11px;font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.015em}
+.pub-info p{margin:0 0 12px;font-size:13px;line-height:1.65;color:#5c6868}
+.publication-year-section:nth-of-type(even) .pub-info p{color:#b9c8c5}
+.pub-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.04em;border-bottom:1px solid currentColor}
+.pub-feature{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);background:#fff;border:1px solid rgba(16,32,35,.16);overflow:hidden}
+.pub-feature .pub-art{aspect-ratio:auto;min-height:620px}
+.pub-feature-copy{padding:42px 38px;display:flex;flex-direction:column;justify-content:center}
+.pub-feature-copy .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#43808a}
+.pub-feature-copy h3{font-size:clamp(28px,3vw,44px);line-height:1.12;letter-spacing:-.045em;margin:16px 0 20px}
+.pub-feature-copy p{font-size:15px;line-height:1.8;color:#536163;margin:0 0 17px}
+.pub-feature-copy .authors{font-size:13px;color:#21383b;font-weight:600}
+.pub-feature-meta{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}
+.pub-feature-meta span{border:1px solid #abc2c3;padding:7px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.empty-year{padding:18px 0 4px;color:#6b7776;font-size:14px}
+html[data-lang="ja"] .publication-year-head span,html[data-lang="ja"] .pub-art-tag,html[data-lang="ja"] .pub-info .journal,html[data-lang="ja"] .pub-feature-copy .eyebrow,html[data-lang="ja"] .pub-feature-meta span{text-transform:none;letter-spacing:.05em}
+html[data-lang="ja"] .pub-art-body h3{line-height:1.45;letter-spacing:-.03em}
+html[data-lang="ja"] .pub-feature-copy h3{line-height:1.45;letter-spacing:-.035em}
+@media(max-width:1000px){.publication-grid{grid-template-columns:1fr 1fr}.pub-feature{grid-column:span 2}}
+@media(max-width:720px){.publication-grid{grid-template-columns:1fr}.pub-feature{grid-column:auto;grid-template-columns:1fr}.pub-feature .pub-art{min-height:520px}.publication-year-head{align-items:start;flex-direction:column}.publication-year-section{padding-left:5vw;padding-right:5vw}.pub-art{aspect-ratio:4/5}}
