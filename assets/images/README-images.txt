@@ -1,0 +1,1 @@
+High-resolution field photographs for the website are stored in this directory.
