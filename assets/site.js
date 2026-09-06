@@ -5,33 +5,29 @@
   let lang=(requested==='ja'||requested==='en')?requested:(localStorage.getItem(key)||'en');
   if(lang!=='ja')lang='en';
 
-  // Load the editorial polish / bilingual typography layer on every page.
-  if(!document.querySelector('link[data-lyk-polish]')){
+  const loadStyle=(href,marker)=>{
+    if(document.querySelector(`link[${marker}]`))return;
     const link=document.createElement('link');
-    link.rel='stylesheet';
-    link.href='assets/polish.css';
-    link.dataset.lykPolish='true';
+    link.rel='stylesheet'; link.href=href; link.setAttribute(marker,'true');
     document.head.appendChild(link);
-  }
-
-  // Load the high-resolution field-photo replacement layer.
-  if(!document.querySelector('script[data-lyk-hires]')){
+  };
+  const loadScript=(src,marker)=>{
+    if(document.querySelector(`script[${marker}]`))return;
     const script=document.createElement('script');
-    script.src='assets/highres-loader.js';
-    script.defer=true;
-    script.dataset.lykHires='true';
+    script.src=src; script.defer=true; script.setAttribute(marker,'true');
     document.head.appendChild(script);
-  }
+  };
+
+  loadStyle('assets/polish.css','data-lyk-polish');
+  loadScript('assets/japanese-polish.js','data-lyk-japanese-polish');
+  loadScript('assets/highres-loader.js','data-lyk-hires');
 
   const apply=()=>{
     document.documentElement.lang=lang;
     document.documentElement.dataset.lang=lang;
 
-    // CSS in polish.css controls visibility. Remove any stale inline display
-    // values left by older versions of the language switcher.
-    document.querySelectorAll('[data-en],[data-ja]').forEach(el=>{
-      el.style.removeProperty('display');
-    });
+    // Visibility is controlled by language-aware CSS. Clear legacy inline styles.
+    document.querySelectorAll('[data-en],[data-ja]').forEach(el=>el.style.removeProperty('display'));
 
     document.querySelectorAll('[data-alt-en]').forEach(el=>{
       el.alt=lang==='ja'?(el.dataset.altJa||el.dataset.altEn):el.dataset.altEn;
@@ -61,11 +57,9 @@
       b.setAttribute('aria-label',label);
       b.title=label;
     }
-
     try{localStorage.setItem(key,lang);}catch(e){}
   };
 
-  // Set the document language immediately, then apply once DOM is available.
   document.documentElement.lang=lang;
   document.documentElement.dataset.lang=lang;
 
