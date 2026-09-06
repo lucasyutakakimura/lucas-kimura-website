@@ -9,7 +9,10 @@
 .publication-year-nav a:hover{background:#102023;color:#fff;border-color:#102023}
 
 .publication-year-section{padding:76px 6vw 94px;border-top:1px solid #c8ceca;background:#f2efe7}
-.publication-year-section.year-dark,.publication-year-section.publication-year-galaxea{background:#0b1618;color:#eff5f3;border-color:#26383b}
+.publication-year-section.year-dark{background:#0b1618;color:#eff5f3;border-color:#26383b}
+.publication-year-section.publication-year-galaxea{background:
+  radial-gradient(circle at 50% 42%,rgba(16,188,185,.16),transparent 36%),
+  linear-gradient(180deg,#091719 0%,#0b1719 58%,#081315 100%);color:#eff5f3;border-color:#21373a}
 .publication-year-inner{max-width:1500px;margin:0 auto}
 .publication-year-head{margin-bottom:34px;text-align:center}
 .publication-year-head h2{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(40px,5.4vw,76px);font-weight:600;letter-spacing:.055em;line-height:1;text-transform:uppercase}
@@ -35,60 +38,78 @@
 .year-dark .pub-photo-card{box-shadow:0 18px 42px rgba(0,0,0,.23)}
 
 /*
-   Galaxea cards are designed as complete publication covers.
-   The journal identity is integrated into the page architecture rather than
-   placed as a floating logo over a photograph.
+   Galaxea publication covers.
+   The turquoise from the real journal masthead is carried through the entire
+   card so the logo reads as part of the cover rather than as a pasted badge.
 */
-.publication-cover{display:flex;flex-direction:column;overflow:hidden;background:#a9d8df;color:#102326;border:1px solid rgba(5,64,69,.16);box-shadow:0 18px 44px rgba(5,29,32,.14);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
-.publication-cover:hover{transform:translateY(-5px);box-shadow:0 30px 72px rgba(5,29,32,.2)}
+.publication-cover{
+  --galaxea-a:#09b9b6;
+  --galaxea-b:#38c3c7;
+  --galaxea-c:#9fd8df;
+  --galaxea-ink:#10282b;
+  display:flex;flex-direction:column;overflow:hidden;position:relative;
+  background:
+    radial-gradient(circle at 80% 4%,rgba(255,255,255,.28),transparent 24%),
+    linear-gradient(160deg,var(--galaxea-a) 0%,var(--galaxea-b) 28%,var(--galaxea-c) 100%);
+  color:var(--galaxea-ink);
+  border:1px solid rgba(10,96,101,.18);
+  box-shadow:0 18px 48px rgba(4,30,33,.16),0 0 0 1px rgba(255,255,255,.1) inset;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease
+}
+.publication-cover:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(115deg,rgba(255,255,255,.08),transparent 34%,rgba(1,85,90,.05) 72%,transparent);mix-blend-mode:soft-light}
+.publication-cover>*{position:relative;z-index:1}
+.publication-cover:hover{transform:translateY(-5px);box-shadow:0 32px 76px rgba(4,30,33,.22),0 0 0 1px rgba(255,255,255,.14) inset}
 
-.publication-cover-brand{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px 8px}
-.publication-cover-brand>span{font:600 10px/1.3 Inter,'Noto Sans JP',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#28565b;white-space:nowrap}
-.galaxea-wordmark{position:relative;width:170px;height:54px;overflow:hidden;flex:0 0 auto}
-.galaxea-wordmark img{position:absolute!important;left:0;top:0;height:100%!important;width:auto!important;max-width:none!important;object-fit:contain!important;object-position:left center!important;transform:none!important;filter:none!important}
-/* The source banner is deliberately cropped to the Galaxea wordmark only. */
-.galaxea-wordmark img{height:100%!important;width:520px!important}
+.publication-cover-brand{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px 5px;min-height:68px}
+.publication-cover-brand>span{font-size:0;color:#164b50;white-space:nowrap;opacity:.72}
+.publication-cover-brand>span:after{content:"Japanese Coral Reef Society";font:650 9px/1.25 Inter,'Noto Sans JP',sans-serif;letter-spacing:.055em}
 
-.publication-cover-heading{padding:6px 22px 18px;text-align:left}
-.publication-cover-heading h3{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(15px,1.2vw,20px);font-weight:650;line-height:1.3;letter-spacing:-.022em;color:#102326}
+.galaxea-wordmark{position:relative;width:178px;height:56px;overflow:hidden;flex:0 0 auto;background:transparent}
+.galaxea-wordmark:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--galaxea-a) 0%,transparent 8%,transparent 86%,rgba(26,191,191,.48) 96%,rgba(35,194,195,.9) 100%)}
+.galaxea-wordmark img{position:absolute!important;left:0;top:0;height:100%!important;width:540px!important;max-width:none!important;object-fit:contain!important;object-position:left center!important;transform:none!important;filter:saturate(.98) contrast(1.02)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 3%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 3%,#000 94%,transparent 100%)}
+
+.publication-cover-heading{padding:7px 22px 18px;text-align:left}
+.publication-cover-heading h3{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(15px,1.2vw,20px);font-weight:650;line-height:1.3;letter-spacing:-.022em;color:#0d292c}
 .publication-cover-heading h3 em{font-style:italic}
-.publication-cover-heading p{margin:9px 0 0;font-size:10px;line-height:1.45;color:#365b5f}
+.publication-cover-heading p{margin:9px 0 0;font-size:10px;line-height:1.45;color:rgba(13,59,63,.78)}
 
-.publication-cover-art{margin:0 22px;background:#f8fbfa;border:1px solid rgba(14,76,81,.14);overflow:hidden;box-shadow:0 8px 22px rgba(4,48,53,.07)}
+.publication-cover-art{margin:0 22px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.62);overflow:hidden;box-shadow:0 10px 26px rgba(6,77,82,.10),0 0 0 1px rgba(5,75,80,.06);border-radius:5px}
 .publication-cover-art img{display:block;width:100%;height:100%;image-rendering:auto;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
 .publication-cover-art-photo{aspect-ratio:1.2/1}
 .publication-cover-art-photo img{object-fit:cover;object-position:center center}
 .publication-cover-art-figure{aspect-ratio:1250/428}
 .publication-cover-art-figure img{object-fit:contain;object-position:center center;background:#fff}
-.publication-cover:hover .publication-cover-art-photo img{transform:scale(1.018);filter:saturate(1.035) contrast(1.02)}
-.publication-cover:hover .publication-cover-art-figure img{transform:scale(1.004);filter:saturate(1.012) contrast(1.008)}
+.publication-cover:hover .publication-cover-art-photo img{transform:scale(1.015);filter:saturate(1.025) contrast(1.015)}
+.publication-cover:hover .publication-cover-art-figure img{transform:scale(1.003);filter:saturate(1.01) contrast(1.006)}
 
-.publication-cover-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 22px 18px;margin-top:auto;font:600 10px/1.35 Inter,'Noto Sans JP',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#214b50}
-.publication-cover-foot b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#0d2b2f;color:#d9f4f4;font-size:14px;font-weight:500;transition:transform .25s ease,background .25s ease,color .25s ease}
-.publication-cover:hover .publication-cover-foot b{transform:translate(2px,-2px);background:#f7fbfa;color:#0d2b2f}
+.publication-cover-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 22px 18px;margin-top:auto;font:650 9px/1.35 Inter,'Noto Sans JP',sans-serif;letter-spacing:.075em;text-transform:uppercase;color:rgba(9,59,63,.84)}
+.publication-cover-foot b{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:rgba(10,48,52,.92);color:#ddf5f5;font-size:13px;font-weight:500;box-shadow:0 5px 14px rgba(0,0,0,.10);transition:transform .25s ease,background .25s ease,color .25s ease}
+.publication-cover:hover .publication-cover-foot b{transform:translate(2px,-2px);background:#f8fbfa;color:#0d2b2f}
 
 .publication-cover-compact{aspect-ratio:4/5;min-height:0}
-.publication-cover-compact .publication-cover-brand{padding:15px 16px 5px}
-.publication-cover-compact .galaxea-wordmark{width:118px;height:39px}
-.publication-cover-compact .galaxea-wordmark img{width:370px!important}
-.publication-cover-compact .publication-cover-brand>span{font-size:7.5px;letter-spacing:.05em}
-.publication-cover-compact .publication-cover-heading{padding:4px 16px 12px}
+.publication-cover-compact .publication-cover-brand{padding:13px 16px 2px;min-height:50px}
+.publication-cover-compact .galaxea-wordmark{width:124px;height:40px}
+.publication-cover-compact .galaxea-wordmark img{width:382px!important}
+.publication-cover-compact .publication-cover-brand>span:after{font-size:6.8px;letter-spacing:.035em}
+.publication-cover-compact .publication-cover-heading{padding:5px 16px 11px}
 .publication-cover-compact .publication-cover-heading h3{font-size:clamp(13px,1.04vw,17px);line-height:1.32}
 .publication-cover-compact .publication-cover-heading p{font-size:8.5px;margin-top:7px}
-.publication-cover-compact .publication-cover-art{margin:0 16px}
-.publication-cover-compact .publication-cover-foot{padding:11px 16px 14px;font-size:8px}
-.publication-cover-compact .publication-cover-foot b{width:28px;height:28px;font-size:12px}
+.publication-cover-compact .publication-cover-art{margin:0 16px;border-radius:4px}
+.publication-cover-compact .publication-cover-foot{padding:10px 16px 13px;font-size:7.8px}
+.publication-cover-compact .publication-cover-foot b{width:27px;height:27px;font-size:11px}
 
-.publication-cover-featured{width:100%;background:#acdce3}
-.publication-cover-featured .publication-cover-brand{padding:28px 32px 8px}
-.publication-cover-featured .galaxea-wordmark{width:250px;height:76px}
-.publication-cover-featured .galaxea-wordmark img{width:760px!important}
-.publication-cover-featured .publication-cover-brand>span{font-size:11px;letter-spacing:.09em}
-.publication-cover-featured .publication-cover-heading{padding:8px 32px 25px;text-align:center}
-.publication-cover-featured .publication-cover-heading h3{max-width:540px;margin:0 auto;font-size:clamp(20px,2vw,30px);line-height:1.22}
-.publication-cover-featured .publication-cover-heading p{font-size:11px;margin-top:11px}
-.publication-cover-featured .publication-cover-art{margin:0 32px;border-radius:8px}
-.publication-cover-featured .publication-cover-foot{padding:18px 32px 24px;font-size:10px}
+.publication-cover-featured{width:100%;background:
+  radial-gradient(circle at 82% 5%,rgba(255,255,255,.32),transparent 28%),
+  linear-gradient(158deg,#08b8b5 0%,#39c3c7 28%,#93d5dc 68%,#b4dce3 100%)}
+.publication-cover-featured .publication-cover-brand{padding:24px 30px 4px;min-height:86px}
+.publication-cover-featured .galaxea-wordmark{width:262px;height:79px}
+.publication-cover-featured .galaxea-wordmark img{width:790px!important}
+.publication-cover-featured .publication-cover-brand>span:after{font-size:9.5px;letter-spacing:.07em}
+.publication-cover-featured .publication-cover-heading{padding:8px 30px 24px;text-align:center}
+.publication-cover-featured .publication-cover-heading h3{max-width:540px;margin:0 auto;font-size:clamp(20px,2vw,30px);line-height:1.22;color:#0a2528}
+.publication-cover-featured .publication-cover-heading p{font-size:11px;margin-top:11px;color:rgba(11,54,58,.78)}
+.publication-cover-featured .publication-cover-art{margin:0 30px;border-radius:7px}
+.publication-cover-featured .publication-cover-foot{padding:17px 30px 22px;font-size:9px}
 
 .profiles-section{padding:46px 6vw 62px;background:#e8e4da;border-top:1px solid #c8ceca}
 .profiles-head{margin-bottom:18px;font:600 clamp(24px,2.8vw,38px)/1.1 Inter,'Noto Sans JP',sans-serif;letter-spacing:-.04em}
@@ -103,7 +124,7 @@ html[data-lang="ja"] .publication-year-head h2{text-transform:none;letter-spacin
 html[data-lang="ja"] .pub-card-copy small{text-transform:none;letter-spacing:.04em}
 html[data-lang="ja"] .pub-card-copy h3{line-height:1.55;font-size:clamp(15px,1.22vw,19px)}
 html[data-lang="ja"] .publication-intro p{line-height:1.9}
-html[data-lang="ja"] .publication-cover-brand>span,html[data-lang="ja"] .publication-cover-foot{text-transform:none;letter-spacing:.04em}
+html[data-lang="ja"] .publication-cover-foot{text-transform:none;letter-spacing:.04em}
 
 @media(max-width:1180px){
   .publication-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -129,14 +150,14 @@ html[data-lang="ja"] .publication-cover-brand>span,html[data-lang="ja"] .publica
   html[data-lang="ja"] .pub-card-copy h3{font-size:17px}
 
   .publication-cover-compact{aspect-ratio:auto;min-height:520px}
-  .publication-cover-featured .publication-cover-brand{padding:21px 18px 6px;display:block}
-  .publication-cover-featured .galaxea-wordmark{width:205px;height:63px}
-  .publication-cover-featured .galaxea-wordmark img{width:630px!important}
-  .publication-cover-featured .publication-cover-brand>span{display:block;margin-top:5px}
-  .publication-cover-featured .publication-cover-heading{padding:8px 18px 19px;text-align:left}
+  .publication-cover-featured .publication-cover-brand{padding:19px 18px 2px;display:block;min-height:72px}
+  .publication-cover-featured .galaxea-wordmark{width:210px;height:64px}
+  .publication-cover-featured .galaxea-wordmark img{width:640px!important}
+  .publication-cover-featured .publication-cover-brand>span{display:none}
+  .publication-cover-featured .publication-cover-heading{padding:8px 18px 18px;text-align:left}
   .publication-cover-featured .publication-cover-heading h3{font-size:19px;line-height:1.3}
   .publication-cover-featured .publication-cover-art{margin:0 18px;border-radius:5px}
-  .publication-cover-featured .publication-cover-foot{padding:15px 18px 19px}
+  .publication-cover-featured .publication-cover-foot{padding:14px 18px 18px}
 
   .profiles-section{padding-left:5vw;padding-right:5vw}
 }
