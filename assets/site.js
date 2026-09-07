@@ -37,7 +37,6 @@
     html[data-lang="ja"] .cv p{line-height:1.9}
     html[data-lang="ja"] .contact>div>span{font-family:'Noto Sans JP',sans-serif;letter-spacing:.045em;font-weight:600}
     html[data-lang="ja"] .contact p{line-height:1.9}
-    html[data-lang="ja"] .home-page .hero-kicker{font-family:'Noto Sans JP',sans-serif;letter-spacing:.09em}
     html[data-lang="ja"] .home-page .field{font-family:'Noto Sans JP',sans-serif;font-size:clamp(30px,3.65vw,58px);font-weight:600;letter-spacing:-.04em;line-height:1.2}
     html[data-lang="ja"] .home-page .statement{font-family:'Noto Sans JP',sans-serif;font-size:clamp(25px,2.9vw,44px);line-height:1.42;letter-spacing:-.045em;font-weight:600;max-width:900px}
     html[data-lang="ja"] .home-page .hero-meta{line-height:1.8;letter-spacing:.01em}
@@ -103,6 +102,17 @@
     setImage('.field-notes article:nth-child(2) img',healthy,'Healthy coral reef habitat','健全なサンゴ礁生息場');
   }
 
+  function refineNavigationAndHome(){
+    document.querySelectorAll('a[href*="fieldwork.html"]').forEach(a=>{
+      const en=a.querySelector('[data-en]');
+      const ja=a.querySelector('[data-ja]');
+      if(en) en.textContent='Field Journal';
+      if(ja) ja.textContent='フィールド記録';
+    });
+    const homeKicker=document.querySelector('.home-page .hero-kicker');
+    if(homeKicker) homeKicker.remove();
+  }
+
   const apply=()=>{
     document.documentElement.lang=lang;
     document.documentElement.dataset.lang=lang;
@@ -128,6 +138,7 @@
   };
 
   document.addEventListener('DOMContentLoaded',()=>{
+    refineNavigationAndHome();
     applyHighResolutionPhotography();
     apply();
     const button=document.getElementById('lang');
