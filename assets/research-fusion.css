@@ -1,0 +1,59 @@
+/* Home research section — two disciplines, one integrated research identity */
+.home-page #research{padding:122px 6vw 132px;background:#071719;color:#eef5f3}
+.home-page #research .section-head{display:grid;grid-template-columns:210px minmax(0,1fr);gap:34px;align-items:end;margin-bottom:58px}
+.home-page #research .section-head .kicker{align-self:start;padding-top:12px;color:#9de0e7;font-size:12px;line-height:1.65}
+.home-page #research .section-head h2{margin:0;max-width:1120px;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:clamp(50px,6.6vw,102px);font-weight:300;line-height:.98;letter-spacing:-.03em;text-transform:none;text-wrap:balance}
+
+.research-fusion{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:650px;border:1px solid rgba(255,255,255,.13);overflow:hidden;background:#0a2024;box-shadow:0 32px 90px rgba(0,0,0,.22)}
+.fusion-panel{position:relative;min-width:0;overflow:hidden;isolation:isolate}
+.fusion-panel:first-child{border-right:1px solid rgba(255,255,255,.18)}
+.fusion-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.fusion-panel--ecology>img{object-position:center 52%}
+.fusion-panel--acoustics>img{object-position:center 50%}
+.fusion-panel:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(2,16,19,.08) 0%,rgba(2,16,19,.28) 42%,rgba(2,16,19,.92) 100%)}
+.fusion-panel:hover>img{transform:scale(1.035);filter:saturate(1.06)}
+.fusion-copy{position:absolute;z-index:2;left:36px;right:36px;bottom:38px}
+.fusion-copy b{display:block;margin-bottom:11px;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;letter-spacing:.13em;color:#9de0e7}
+.fusion-copy h3{margin:0 0 14px;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:clamp(35px,4vw,62px);font-weight:300;line-height:.98;letter-spacing:-.02em}
+.fusion-copy p{margin:0;max-width:520px;color:#cbd9d6;font-size:14px;line-height:1.82}
+
+.fusion-cross{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:82px;height:82px;border:1px solid rgba(157,224,231,.72);border-radius:50%;background:rgba(5,28,32,.82);backdrop-filter:blur(14px);font-family:Oswald,sans-serif;font-size:46px;font-weight:300;line-height:1;color:#9de0e7;box-shadow:0 18px 40px rgba(0,0,0,.24)}
+
+.fusion-synthesis{grid-column:1/-1;position:relative;z-index:7;margin:-1px 0 0;padding:25px 32px 27px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;align-items:start;background:#0b2b30;border:1px solid rgba(157,224,231,.16);border-top:0}
+.fusion-synthesis>span{font-family:Oswald,'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;letter-spacing:.13em;color:#9de0e7}
+.fusion-synthesis p{margin:0;max-width:900px;font-size:15px;line-height:1.85;color:#d8e4e1}
+
+html[data-lang="ja"] .home-page #research .section-head h2,
+html[data-lang="ja"] .fusion-copy h3,
+html[data-lang="ja"] .fusion-copy p,
+html[data-lang="ja"] .fusion-copy b,
+html[data-lang="ja"] .fusion-synthesis{font-family:'Noto Sans JP',sans-serif}
+html[data-lang="ja"] .home-page #research .section-head h2{font-size:clamp(43px,5.3vw,78px);font-weight:600;line-height:1.24;letter-spacing:-.055em}
+html[data-lang="ja"] .fusion-copy h3{font-size:clamp(31px,3vw,47px);font-weight:600;line-height:1.28;letter-spacing:-.045em}
+html[data-lang="ja"] .fusion-copy p{line-height:1.95}
+html[data-lang="ja"] .fusion-synthesis p{line-height:1.95}
+
+@media(max-width:900px){
+  .home-page #research{padding:92px 5vw 102px}
+  .home-page #research .section-head{grid-template-columns:1fr;gap:12px;margin-bottom:40px}
+  .home-page #research .section-head .kicker{padding-top:0}
+  .research-fusion{grid-template-columns:1fr;min-height:0}
+  .fusion-panel{min-height:520px}
+  .fusion-panel:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .fusion-cross{top:520px;width:68px;height:68px;font-size:38px}
+  .fusion-synthesis{grid-template-columns:1fr;gap:9px;padding:24px 25px 27px}
+}
+
+@media(max-width:560px){
+  .home-page #research{padding:78px 5vw 86px}
+  .home-page #research .section-head h2{font-size:clamp(38px,10.5vw,54px)}
+  html[data-lang="ja"] .home-page #research .section-head h2{font-size:clamp(34px,9.4vw,47px)}
+  .fusion-panel{min-height:455px}
+  .fusion-copy{left:24px;right:24px;bottom:28px}
+  .fusion-copy h3{font-size:36px}
+  html[data-lang="ja"] .fusion-copy h3{font-size:31px}
+  .fusion-cross{top:455px;width:60px;height:60px;font-size:33px}
+  .fusion-synthesis{padding:22px 23px 25px}
+}
+
+@media(prefers-reduced-motion:reduce){.fusion-panel>img{transition:none}}
