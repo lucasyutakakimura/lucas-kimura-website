@@ -1,4 +1,4 @@
-/* Publications — image-led editorial covers with seamless figure integration */
+/* Publications — image-led editorial covers with seamless full-bleed visuals */
 .publications-page{background:#0d1719;color:#f5f8f7}
 .publications-main{background:#0d1719}
 .publications-page .sub-hero{padding-bottom:54px;background:#f2efe7;color:#102023}
@@ -15,7 +15,6 @@
 .publication-year-head{text-align:center;margin-bottom:56px}
 .publication-year-head h2{margin:0;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:clamp(58px,7vw,106px);font-weight:400;line-height:.95;letter-spacing:.075em;color:#f7faf9;text-transform:uppercase}
 
-/* Three-column journal-cover wall. */
 .paper-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 34px;align-items:start}
 .paper-grid--single{grid-template-columns:minmax(680px,1020px);justify-content:center}
 
@@ -31,32 +30,36 @@
 }
 .paper-card:hover{transform:translateY(-7px);box-shadow:0 32px 72px rgba(0,0,0,.34);filter:saturate(1.02)}
 
-/* 1) Journal identity */
 .paper-card__journal{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;min-height:106px;margin:0 0 12px;z-index:2}
 .paper-card__journal span{display:block;max-width:82%;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(29px,2.35vw,43px);font-weight:400;line-height:1.02;letter-spacing:-.022em;color:var(--card-ink)}
 .paper-card__journal small{display:block;margin-top:7px;max-width:32%;text-align:right;font-family:Inter,'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;line-height:1.38;letter-spacing:.075em;text-transform:uppercase;color:var(--card-muted)}
 .paper-card__journal--long span{font-size:clamp(25px,2vw,36px);line-height:1.05}
 
-/* 2) Article title + authors */
 .paper-card__info{position:relative;z-index:2;text-align:center;padding:0 3px 20px}
 .paper-card__info h3{margin:0 auto;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(15px,1.18vw,19px);font-weight:700;line-height:1.27;letter-spacing:-.025em;max-width:96%;color:var(--card-ink)}
 .paper-card__info h3 em{font-style:italic}
 .paper-card__info p{margin:14px auto 0;max-width:96%;font-size:clamp(11.8px,.94vw,14.4px);font-weight:450;line-height:1.5;color:var(--card-muted)}
 
-/* 3) Representative figure / photograph.
-   No white mat: the visual sits directly in the cover and inherits the journal palette. */
-.paper-card__visual{position:relative;z-index:1;min-height:0;overflow:hidden;margin-top:5px;padding:0;background:transparent;border-radius:10px;box-shadow:none}
-.paper-card__visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center;border-radius:10px;background:transparent;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
+/* Full-bleed visual area: no white mat, no frame, no inset box. */
+.paper-card__visual{
+  position:relative;z-index:1;min-height:0;overflow:hidden;
+  margin:5px -28px -30px;padding:0;
+  background:transparent!important;border:0;border-radius:0;box-shadow:none!important;
+}
+.paper-card__visual img{
+  width:100%;height:100%;display:block;
+  object-fit:cover;object-position:center center;
+  border:0;border-radius:0;background:transparent!important;box-shadow:none!important;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease
+}
 .paper-card:hover .paper-card__visual img{transform:scale(1.012);filter:saturate(1.025) contrast(1.01)}
 
-/* Exact-fit mode for wide graphical abstracts / panoramas. */
-.paper-card__visual--contain{display:flex;align-items:center;justify-content:center;background:transparent;border-radius:8px;overflow:hidden}
-.paper-card__visual--contain img{width:100%;height:auto;max-height:100%;object-fit:contain;object-position:center center;border-radius:8px;background:transparent;transform:none!important}
+.paper-card__visual--contain{display:flex;align-items:center;justify-content:center;background:transparent!important;border:0;border-radius:0;overflow:hidden}
+.paper-card__visual--contain img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center center;border-radius:0;background:transparent!important;transform:none!important}
 
 .paper-card__open{position:absolute;right:16px;bottom:16px;z-index:3;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(9,28,31,.86);color:white;font-size:15px;font-weight:500;box-shadow:0 5px 16px rgba(0,0,0,.14);opacity:.9;transition:transform .25s ease,background .25s ease}
 .paper-card:hover .paper-card__open{transform:translate(2px,-2px);background:#fff;color:var(--card-ink)}
 
-/* Quiet journal-specific palettes; imagery and typography remain primary. */
 .paper-card--meps{--card-bg:#a9d4ec;--card-ink:#14243a;--card-muted:#415570}
 .paper-card--coralogy{--card-bg:#d7e1cf;--card-ink:#1e342b;--card-muted:#53675f}
 .paper-card--galaxea{--card-bg:#79d3d5;--card-ink:#082a2f;--card-muted:#315e61}
@@ -65,14 +68,10 @@
 .paper-card--rsms{--card-bg:#bad8cf;--card-ink:#17382f;--card-muted:#4b685f}
 .paper-card--mer{--card-bg:#8ecce8;--card-ink:#112d3b;--card-muted:#3e5d6c}
 
-/* Featured Galaxea 2024.
-   The card itself follows the panoramic A/B figure instead of forcing a tall cover.
-   This removes artificial empty space and lets the figure sit naturally in the composition. */
+/* 2024 Galaxea: panoramic feature, flush to the cover edges. */
 .paper-card--featured{
-  aspect-ratio:auto;
-  grid-template-rows:auto auto auto;
-  width:min(100%,1020px);
-  padding:34px 36px 36px;
+  aspect-ratio:auto;grid-template-rows:auto auto auto;
+  width:min(100%,1020px);padding:34px 36px 0;
   box-shadow:0 26px 66px rgba(0,0,0,.33)
 }
 .paper-card--featured .paper-card__journal{min-height:82px;margin-bottom:8px;align-items:flex-start}
@@ -81,8 +80,11 @@
 .paper-card--featured .paper-card__info{padding:4px 4% 26px}
 .paper-card--featured .paper-card__info h3{font-size:clamp(19px,1.8vw,27px);line-height:1.25;max-width:90%}
 .paper-card--featured .paper-card__info p{font-size:clamp(13px,1.06vw,16px);line-height:1.5;max-width:90%}
-.paper-card--featured .paper-card__visual{width:100%;height:auto;aspect-ratio:1250/428;margin-top:0;border-radius:9px;overflow:hidden;background:transparent}
-.paper-card--featured .paper-card__visual img{width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:9px;background:transparent}
+.paper-card--featured .paper-card__visual{
+  width:auto;height:auto;aspect-ratio:1250/428;
+  margin:0 -36px 0;padding:0;border-radius:0;background:transparent!important
+}
+.paper-card--featured .paper-card__visual img{width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:0;background:transparent!important}
 .paper-card--featured .paper-card__open{right:20px;bottom:20px}
 
 .profiles-section{padding:52px 6vw 68px;background:#e8e4da;color:#102023;border-top:1px solid #c8ceca}
@@ -104,7 +106,8 @@ html[data-lang="ja"] .publication-intro p{line-height:1.95}
 @media(max-width:1240px){
   .paper-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:940px;margin:0 auto}
   .paper-grid--single{grid-template-columns:minmax(580px,900px);max-width:none}
-  .paper-card{padding:27px}
+  .paper-card{padding:27px 27px 29px}
+  .paper-card__visual{margin-left:-27px;margin-right:-27px;margin-bottom:-29px}
 }
 @media(max-width:760px){
   .publication-year-nav{position:static}
@@ -120,18 +123,16 @@ html[data-lang="ja"] .publication-intro p{line-height:1.95}
   .paper-card__info{padding-bottom:17px}
   .paper-card__info h3{font-size:16px;line-height:1.35}
   .paper-card__info p{font-size:11.8px}
-  .paper-card__visual{border-radius:8px}
-  .paper-card__visual img{border-radius:8px}
+  .paper-card__visual{margin-left:-22px;margin-right:-22px;margin-bottom:-24px}
 
-  .paper-card--featured{aspect-ratio:auto;width:100%;padding:24px 22px 24px}
+  .paper-card--featured{aspect-ratio:auto;width:100%;padding:24px 22px 0}
   .paper-card--featured .paper-card__journal{min-height:72px;margin-bottom:6px}
   .paper-card--featured .paper-card__journal span{font-size:clamp(34px,10vw,48px)}
   .paper-card--featured .paper-card__journal small{font-size:9px;max-width:40%}
   .paper-card--featured .paper-card__info{padding:2px 0 18px}
   .paper-card--featured .paper-card__info h3{font-size:17px;line-height:1.38;max-width:100%}
   .paper-card--featured .paper-card__info p{font-size:11.8px;max-width:100%}
-  .paper-card--featured .paper-card__visual{aspect-ratio:1250/428;border-radius:7px}
-  .paper-card--featured .paper-card__visual img{border-radius:7px}
+  .paper-card--featured .paper-card__visual{margin:0 -22px 0;aspect-ratio:1250/428}
   .profile-link-grid{grid-template-columns:1fr}
 }
 @media(max-width:500px){
@@ -139,7 +140,9 @@ html[data-lang="ja"] .publication-intro p{line-height:1.95}
   .paper-grid,.paper-grid--single{max-width:100%}
   .paper-card{aspect-ratio:7/10.35;padding:21px 18px 20px}
   .paper-card__journal{min-height:84px}
-  .paper-card--featured{aspect-ratio:auto;padding:21px 18px 21px}
+  .paper-card__visual{margin-left:-18px;margin-right:-18px;margin-bottom:-20px}
+  .paper-card--featured{aspect-ratio:auto;padding:21px 18px 0}
+  .paper-card--featured .paper-card__visual{margin:0 -18px 0}
   .paper-card__open{right:11px;bottom:11px;width:31px;height:31px}
   .profiles-section{padding-left:5vw;padding-right:5vw}
 }
