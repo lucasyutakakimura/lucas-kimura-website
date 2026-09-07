@@ -1,0 +1,66 @@
+/* Field Journal — chronological, image-led research travel archive */
+.field-journal-page{background:#f2f0e9;color:#102023}
+.field-journal-page .top.solid{background:#071719}
+
+.journal-hero{padding:96px 7vw 70px;background:#071719;color:#f3f8f6;border-top:1px solid rgba(255,255,255,.06)}
+.journal-hero__inner{max-width:1180px;margin:0 auto}
+.journal-hero .kicker{color:#8edce5;margin-bottom:18px}
+.journal-hero h1{margin:0;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:clamp(68px,10vw,150px);font-weight:300;line-height:.9;letter-spacing:-.02em;text-transform:uppercase}
+.journal-hero p{max-width:720px;margin:30px 0 0;color:#b9cbc7;font-size:clamp(16px,1.5vw,20px);line-height:1.8}
+html[data-lang='ja'] .journal-hero h1{font-family:'Noto Sans JP',sans-serif;font-size:clamp(52px,8vw,104px);font-weight:600;line-height:1.12;letter-spacing:-.055em;text-transform:none}
+html[data-lang='ja'] .journal-hero p{line-height:1.95}
+
+.journal-years{position:sticky;top:0;z-index:12;background:rgba(242,240,233,.94);backdrop-filter:blur(16px);border-bottom:1px solid #c7ceca}
+.journal-years__inner{max-width:1540px;margin:0 auto;padding:14px 6vw;display:flex;gap:10px;align-items:center;overflow:auto}
+.journal-years a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border:1px solid #aeb9b6;border-radius:999px;font:600 11px/1 Inter,'Noto Sans JP',sans-serif;letter-spacing:.08em;color:#102023;transition:.2s ease}
+.journal-years a:hover{background:#102023;color:#fff;border-color:#102023}
+
+.journal-year{padding:76px 6vw 94px}
+.journal-year:nth-of-type(even){background:#e9e6de}
+.journal-year__inner{max-width:1540px;margin:0 auto}
+.journal-year__head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:30px;border-bottom:1px solid #bcc4c0;padding-bottom:18px}
+.journal-year__head h2{margin:0;font-family:Oswald,sans-serif;font-size:clamp(58px,7vw,100px);font-weight:300;line-height:.9;letter-spacing:.035em}
+.journal-year__head p{margin:0 0 8px;max-width:460px;color:#667573;font-size:13px;line-height:1.7;text-align:right}
+
+.journal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.journal-entry{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.8fr);min-height:430px;background:#f8f6ef;border:1px solid #c8cfca;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.journal-entry:hover{transform:translateY(-5px);box-shadow:0 26px 56px rgba(15,31,34,.12);border-color:#97aaa6}
+.journal-entry__image{position:relative;min-height:430px;overflow:hidden;background:#173035}
+.journal-entry__image img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.journal-entry:hover .journal-entry__image img{transform:scale(1.025)}
+.journal-entry__date{position:absolute;top:18px;left:18px;background:rgba(6,22,25,.78);backdrop-filter:blur(10px);color:#fff;padding:8px 11px;font:600 10px/1 Inter,sans-serif;letter-spacing:.11em;text-transform:uppercase}
+.journal-entry__body{display:flex;flex-direction:column;padding:30px 28px 26px}
+.journal-entry__place{font:600 11px/1.45 Inter,'Noto Sans JP',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#3b6f75;margin-bottom:16px}
+.journal-entry h3{margin:0;font-size:clamp(24px,2.1vw,36px);line-height:1.08;letter-spacing:-.035em;font-weight:600}
+.journal-entry p{margin:18px 0 0;color:#5b6968;font-size:14px;line-height:1.8}
+.journal-entry__meta{margin-top:auto;padding-top:24px;display:flex;gap:8px;flex-wrap:wrap}
+.journal-entry__meta span{display:inline-flex;padding:6px 9px;border:1px solid #c3cbc7;border-radius:999px;color:#60706f;font-size:10px;line-height:1.2;letter-spacing:.05em;text-transform:uppercase}
+
+html[data-lang='ja'] .journal-entry__place,html[data-lang='ja'] .journal-entry__date,html[data-lang='ja'] .journal-entry__meta span{text-transform:none;letter-spacing:.045em}
+html[data-lang='ja'] .journal-entry h3{font-family:'Noto Sans JP',sans-serif;line-height:1.45;letter-spacing:-.04em}
+html[data-lang='ja'] .journal-entry p{line-height:1.95}
+
+.journal-note{padding:70px 7vw;background:#0b909f;color:#fff}
+.journal-note__inner{max-width:1100px;margin:0 auto}
+.journal-note p{margin:0;font-family:'Noto Serif JP',serif;font-size:clamp(27px,3.2vw,48px);line-height:1.5;letter-spacing:-.03em}
+html[data-lang='en'] .journal-note p{font-family:Georgia,serif;line-height:1.35}
+
+@media(max-width:1180px){
+  .journal-grid{grid-template-columns:1fr}
+  .journal-entry{grid-template-columns:1.35fr .85fr}
+}
+@media(max-width:760px){
+  .journal-hero{padding:72px 6vw 54px}
+  .journal-years{position:static}
+  .journal-year{padding:58px 5vw 72px}
+  .journal-year__head{display:block}
+  .journal-year__head p{margin-top:10px;text-align:left}
+  .journal-entry{grid-template-columns:1fr;min-height:0}
+  .journal-entry__image{min-height:330px}
+  .journal-entry__body{padding:24px 22px 22px}
+}
+@media(max-width:520px){
+  .journal-entry__image{min-height:270px}
+  .journal-entry h3{font-size:26px}
+  .journal-note{padding:54px 6vw}
+}
