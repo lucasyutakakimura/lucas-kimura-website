@@ -18,10 +18,7 @@
 .paper-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;align-items:start}
 .paper-grid--single{grid-template-columns:minmax(320px,390px);justify-content:center}
 
-/*
-  Clean editorial cover: no large journal name in the background.
-  Journal identity is kept as a small, elegant label at the top of each card.
-*/
+/* Clean editorial cover: journal identity is small but clearly readable. */
 .paper-card{
   --card-bg:#afd7e8;
   --card-ink:#11222b;
@@ -41,14 +38,14 @@
 .paper-card::after{content:"";position:absolute;z-index:0;inset:15px;border:1px solid rgba(255,255,255,.15);pointer-events:none}
 .paper-card:hover{transform:translateY(-8px);box-shadow:0 34px 72px rgba(0,0,0,.36);filter:saturate(1.02)}
 
-.paper-card__topline{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:22px 23px 0;font-size:8.4px;font-weight:700;line-height:1.35;letter-spacing:.09em;text-transform:uppercase;color:var(--card-muted)}
-.paper-card__topline span:first-child{max-width:76%;opacity:.9}
-.paper-card__topline span:last-child{font-family:Oswald,Inter,sans-serif;font-size:15px;letter-spacing:.08em;color:var(--card-ink)}
+.paper-card__topline{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:22px 23px 0;font-size:10px;font-weight:700;line-height:1.42;letter-spacing:.065em;text-transform:uppercase;color:var(--card-muted)}
+.paper-card__topline span:first-child{max-width:79%;opacity:1;font-size:10.8px}
+.paper-card__topline span:last-child{font-family:Oswald,Inter,sans-serif;font-size:16px;letter-spacing:.07em;color:var(--card-ink)}
 
 .paper-card__body{position:relative;z-index:2;margin-top:auto;padding:42px 26px 18px;background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,.06) 14%,rgba(255,255,255,.34) 100%)}
 .paper-card__body h3{margin:0;font-family:Inter,'Noto Sans JP',sans-serif;font-size:clamp(15px,1.2vw,19px);font-weight:650;line-height:1.28;letter-spacing:-.025em;color:var(--card-ink)}
 .paper-card__body h3 em{font-style:italic}
-.paper-card__body p{margin:12px 0 0;font-size:9.4px;line-height:1.5;color:var(--card-muted)}
+.paper-card__body p{margin:13px 0 0;font-size:11.6px;font-weight:500;line-height:1.58;color:var(--card-muted)}
 
 .paper-card__foot{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 23px 20px;border-top:1px solid var(--card-line);font-size:8.2px;font-weight:700;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;color:var(--card-muted)}
 .paper-card__foot span{max-width:80%}
@@ -67,8 +64,9 @@
 .paper-card--featured{aspect-ratio:4/5;min-height:0;box-shadow:0 24px 60px rgba(0,0,0,.32)}
 .paper-card--featured .paper-card__body{padding:46px 30px 22px}
 .paper-card--featured .paper-card__body h3{font-size:clamp(18px,1.65vw,25px);line-height:1.24}
-.paper-card--featured .paper-card__body p{font-size:10.5px}
-.paper-card--featured .paper-card__topline{padding:24px 26px 0}
+.paper-card--featured .paper-card__body p{font-size:12.4px;line-height:1.58}
+.paper-card--featured .paper-card__topline{padding:24px 26px 0;font-size:10.4px}
+.paper-card--featured .paper-card__topline span:first-child{font-size:11.4px}
 .paper-card--featured .paper-card__foot{padding:15px 26px 22px}
 
 .profiles-section{padding:50px 6vw 66px;background:#e8e4da;color:#102023;border-top:1px solid #c8ceca}
@@ -81,8 +79,10 @@
 
 html[data-lang="ja"] .publication-year-nav a{letter-spacing:.03em}
 html[data-lang="ja"] .publication-year-head h2{font-family:'Noto Sans JP',sans-serif;text-transform:none;letter-spacing:-.045em;line-height:1.12;font-weight:600}
-html[data-lang="ja"] .paper-card__topline{letter-spacing:.04em;text-transform:none}
+html[data-lang="ja"] .paper-card__topline{letter-spacing:.025em;text-transform:none}
+html[data-lang="ja"] .paper-card__topline span:first-child{font-size:11px}
 html[data-lang="ja"] .paper-card__body h3{line-height:1.5;letter-spacing:-.028em}
+html[data-lang="ja"] .paper-card__body p{font-size:11.8px;line-height:1.7}
 html[data-lang="ja"] .paper-card__foot{text-transform:none;letter-spacing:.035em}
 html[data-lang="ja"] .publication-intro p{line-height:1.9}
 
@@ -97,19 +97,22 @@ html[data-lang="ja"] .publication-intro p{line-height:1.9}
   .publication-year-head h2{font-size:clamp(48px,13vw,76px)}
   .paper-grid,.paper-grid--single{grid-template-columns:1fr;max-width:430px;margin:0 auto;gap:24px}
   .paper-card{aspect-ratio:4/5}
-  .paper-card__topline{padding:20px 20px 0}
+  .paper-card__topline{padding:20px 20px 0;font-size:9.8px}
+  .paper-card__topline span:first-child{font-size:10.6px}
   .paper-card__body{padding:36px 22px 18px}
   .paper-card__body h3{font-size:18px}
-  .paper-card__body p{font-size:10px}
+  .paper-card__body p{font-size:11.8px}
   .paper-card__foot{padding:13px 20px 18px}
   .paper-card--featured .paper-card__body{padding:38px 24px 19px}
   .paper-card--featured .paper-card__body h3{font-size:20px}
+  .paper-card--featured .paper-card__body p{font-size:12px}
   .profile-link-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   .publication-year-section{padding-left:5vw;padding-right:5vw}
   .paper-grid,.paper-grid--single{max-width:100%}
   .paper-card{aspect-ratio:4/5.15}
-  .paper-card__topline{font-size:8.5px}
+  .paper-card__topline{font-size:9.5px}
+  .paper-card__topline span:first-child{font-size:10.2px}
   .profiles-section{padding-left:5vw;padding-right:5vw}
 }
