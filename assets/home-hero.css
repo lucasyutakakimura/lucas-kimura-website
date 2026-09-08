@@ -1,0 +1,26 @@
+/* Home hero — high-resolution field photograph */
+.home-page .hero > img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 56%;
+  transform:none;
+  animation:none;
+  image-rendering:auto;
+}
+
+/* Keep the photograph dominant while preserving strong text legibility. */
+.home-page .shade{
+  background:
+    linear-gradient(90deg,rgba(2,15,18,.82) 0%,rgba(2,15,18,.52) 38%,rgba(2,15,18,.09) 76%),
+    linear-gradient(0deg,rgba(2,15,18,.48) 0%,transparent 44%,rgba(2,15,18,.12) 100%);
+}
+
+@media(max-width:900px){
+  .home-page .hero > img{object-position:center 53%;}
+}
+
+@media(max-width:560px){
+  .home-page .hero > img{object-position:center 50%;}
+}
