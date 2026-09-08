@@ -43,11 +43,11 @@
     html[data-lang="ja"] .home-page .hero-actions .button{font-family:'Noto Sans JP',sans-serif;letter-spacing:.02em}
     html[data-lang="ja"] .profile-dock-label>span{font-family:'Noto Sans JP',sans-serif;text-transform:none;letter-spacing:.06em}
     html[data-lang="ja"] .profile-card small{font-size:11px;line-height:1.65}
-    html[data-lang="ja"] .home-page .intro h2{font-family:'Noto Sans JP',sans-serif;font-size:clamp(34px,4.35vw,66px);line-height:1.35;letter-spacing:-.055em;font-weight:600}
+    html[data-lang="ja"] .home-page .intro h2{font-family:'Noto Sans JP',sans-serif;font-size:clamp(30px,3.75vw,56px);line-height:1.42;letter-spacing:-.045em;font-weight:600}
     html[data-lang="ja"] .home-page .intro h2 em{font-family:'Noto Serif JP',serif;font-style:normal}
     html[data-lang="ja"] .home-page .intro .cols{line-height:2;font-size:16px}
     html[data-lang="ja"] .home-page .research-tags>span{font-family:'Noto Sans JP',sans-serif;text-transform:none;letter-spacing:.03em}
-    html[data-lang="ja"] .home-page #research .section-head h2{font-family:'Noto Sans JP',sans-serif;font-size:clamp(48px,6.9vw,104px);line-height:1.2;letter-spacing:-.055em;font-weight:600}
+    html[data-lang="ja"] .home-page #research .section-head h2{font-family:'Noto Sans JP',sans-serif;font-size:clamp(42px,5.15vw,76px);line-height:1.24;letter-spacing:-.055em;font-weight:600}
     html[data-lang="ja"] .home-page .stories h3{font-family:'Noto Sans JP',sans-serif;font-size:clamp(30px,3vw,48px);line-height:1.3;letter-spacing:-.045em;font-weight:600}
     html[data-lang="ja"] .home-page .stories p{line-height:1.9}
     html[data-lang="ja"] .home-page .news .section-head h2{font-family:'Noto Sans JP',sans-serif;font-size:clamp(58px,7.8vw,112px);font-weight:600;letter-spacing:-.055em}
@@ -60,7 +60,7 @@
     html[data-lang="ja"] .home-page .field-grid span{font-family:'Noto Sans JP',sans-serif;letter-spacing:.04em}
     html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif;font-size:clamp(34px,4.6vw,68px);line-height:1.55;letter-spacing:-.045em;font-weight:600}
     html[data-lang="ja"] footer nav{font-family:'Noto Sans JP',sans-serif}
-    @media(max-width:700px){html[data-lang="ja"] .home-page .field{font-size:clamp(27px,8vw,40px)}html[data-lang="ja"] .home-page .statement{font-size:clamp(22px,6vw,31px)}html[data-lang="ja"] .home-page .intro h2{font-size:clamp(30px,8vw,43px)}html[data-lang="ja"] .home-page #research .section-head h2{font-size:clamp(42px,11vw,62px)}}
+    @media(max-width:700px){html[data-lang="ja"] .home-page .field{font-size:clamp(27px,8vw,40px)}html[data-lang="ja"] .home-page .statement{font-size:clamp(22px,6vw,31px)}html[data-lang="ja"] .home-page .intro h2{font-size:clamp(29px,8.2vw,38px)}html[data-lang="ja"] .home-page #research .section-head h2{font-size:clamp(34px,9.4vw,47px)}}
   `;
   document.head.appendChild(editorial);
 
@@ -93,7 +93,8 @@
   function applyHighResolutionPhotography(){
     const fish='assets/images/reef-fish-2048.avif';
     const healthy='assets/images/reef-healthy-2048.avif';
-    setImage('.hero>img',fish,'Reef fishes above branching corals in Okinawa, Japan','沖縄の枝状サンゴ群落とサンゴ礁魚類');
+    // The Home hero intentionally uses the image referenced directly in index.html.
+    // Do not overwrite it here; this keeps the user's uploaded full-resolution photograph authoritative.
     setImage('.stories article:nth-child(1) img',healthy,'Structurally complex coral reef habitat in Okinawa','沖縄の立体的で健全なサンゴ礁生息場');
     setImage('.stories article:nth-child(2) img',fish,'Reef fishes above branching corals','枝状サンゴ上を泳ぐサンゴ礁魚類');
     setImage('.field-grid a:nth-child(1) img',fish,'Coral reef and fishes in Okinawa','沖縄のサンゴ礁と魚類');
