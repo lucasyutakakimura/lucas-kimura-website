@@ -62,10 +62,10 @@
     try{bleachingUrl=await assemble(sources.bleaching);}catch(error){console.warn('High-resolution bleaching image could not be assembled; fallback remains active.',error);}
 
     if(heroUrl){
-      document.querySelectorAll('.hero>img,.stories article:nth-child(2) img').forEach(img=>{
-        img.src=heroUrl;
-        img.removeAttribute('srcset');
-      });
+    document.querySelectorAll('.stories article:nth-child(2) img').forEach(img=>{
+  img.src=heroUrl;
+  img.removeAttribute('srcset');
+});
     }
     if(bleachingUrl){
       document.querySelectorAll('.stories article:nth-child(3) img').forEach(img=>{
