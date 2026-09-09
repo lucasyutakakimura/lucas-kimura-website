@@ -17,6 +17,14 @@
     linear-gradient(0deg,rgba(2,15,18,.48) 0%,transparent 44%,rgba(2,15,18,.12) 100%);
 }
 
+/* Japanese home: remove the redundant research kicker and let the main heading lead. */
+html[data-lang="ja"] .home-page #research .section-head .kicker{
+  display:none;
+}
+html[data-lang="ja"] .home-page #research .section-head{
+  grid-template-columns:1fr;
+}
+
 @media(max-width:900px){
   .home-page .hero > img{object-position:center 53%;}
 }
