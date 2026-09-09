@@ -32,27 +32,25 @@
 .home-page .scroll-note:before{content:'';width:46px;height:1px;background:rgba(255,255,255,.5)}
 
 /* Academic profile dock */
-.profile-dock{position:relative;z-index:8;width:min(1320px,91vw);margin:-58px auto 0;background:#0a2024;color:#fff;box-shadow:0 28px 80px rgba(1,15,18,.24);display:grid;grid-template-columns:220px repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.10)}
-.profile-dock-label{padding:27px 26px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.13)}
-.profile-dock-label>span{font-family:Oswald,'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9de0e7}
-.profile-dock-label strong{font-size:12px;font-weight:500;margin-top:5px;color:#9db1af;line-height:1.45}
-.profile-card{--brand:#9de0e7;position:relative;min-height:118px;padding:20px 24px;display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;align-items:center;border-right:1px solid rgba(255,255,255,.13);transition:background .28s ease,transform .28s ease,box-shadow .28s ease;isolation:isolate}
+.profile-dock{position:relative;z-index:8;width:min(1360px,92vw);margin:-54px auto 0;background:#0a2024;color:#fff;box-shadow:0 26px 74px rgba(1,15,18,.22);display:grid;grid-template-columns:190px repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.10)}
+.profile-dock-label{padding:24px 28px;display:flex;align-items:center;justify-content:flex-start;border-right:1px solid rgba(255,255,255,.13)}
+.profile-dock-label>span{font-family:Oswald,'Noto Sans JP',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#9de0e7;line-height:1.45}
+.profile-card{--brand:#9de0e7;position:relative;min-height:108px;padding:18px 24px;display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:18px;align-items:center;border-right:1px solid rgba(255,255,255,.13);transition:background .28s ease,transform .28s ease,box-shadow .28s ease;isolation:isolate}
 .profile-card:last-child{border-right:0}
 .profile-card:after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .28s ease;opacity:.9}
-.profile-card:hover{background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));transform:translateY(-6px);box-shadow:0 16px 35px rgba(0,0,0,.16)}
+.profile-card:hover{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.015));transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.15)}
 .profile-card:hover:after{transform:scaleX(1)}
 .scholar-card{--brand:#4285f4}
 .researchgate-card{--brand:#00ccbb}
 .researchmap-card{--brand:#9aadb8}
-.profile-logo{width:56px;height:56px;border-radius:15px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.16);transition:transform .28s ease}
-.profile-logo img{display:block;width:37px;height:37px;object-fit:contain}
-.profile-logo-wide{width:62px}
-.profile-logo-wide img{width:52px;height:auto;max-height:34px}
-.profile-card:hover .profile-logo{transform:scale(1.045)}
+.profile-logo{width:54px;height:54px;border-radius:14px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 5px 16px rgba(0,0,0,.14);transition:transform .28s ease}
+.profile-logo img{display:block;width:35px;height:35px;object-fit:contain}
+.profile-logo-wide{width:60px}
+.profile-logo-wide img{width:50px;height:auto;max-height:32px}
+.profile-card:hover .profile-logo{transform:scale(1.035)}
 .profile-copy{min-width:0}
-.profile-card strong{display:block;font-size:17px;line-height:1.15;letter-spacing:-.01em}
-.profile-card small{display:block;margin-top:7px;color:#8fa6a3;font-size:10.5px;line-height:1.4;letter-spacing:.025em}
-.profile-arrow{font-size:22px;color:#9de0e7;transition:transform .25s ease,color .25s ease}
+.profile-card strong{display:block;font-size:18px;font-weight:600;line-height:1.1;letter-spacing:-.018em;white-space:normal;text-wrap:balance}
+.profile-arrow{font-size:21px;color:#9de0e7;transition:transform .25s ease,color .25s ease}
 .profile-card:hover .profile-arrow{transform:translate(3px,-3px);color:var(--brand)}
 
 .home-page .intro{padding-top:130px;padding-bottom:125px;background:var(--paper)}
@@ -127,7 +125,6 @@ html[data-lang="ja"] .home-page .statement,
 html[data-lang="ja"] .home-page .hero-meta,
 html[data-lang="ja"] .home-page .hero-actions .button,
 html[data-lang="ja"] .profile-dock-label,
-html[data-lang="ja"] .profile-card small,
 html[data-lang="ja"] .home-page .label,
 html[data-lang="ja"] .home-page .kicker,
 html[data-lang="ja"] .home-page .intro h2,
@@ -147,7 +144,7 @@ html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif}
 
 @media(max-width:1050px){
   .profile-dock{width:90vw;grid-template-columns:1fr 1fr 1fr}
-  .profile-dock-label{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.13);padding:16px 20px;flex-direction:row;justify-content:flex-start;gap:10px;align-items:center}
+  .profile-dock-label{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.13);padding:14px 20px}
   .profile-card:nth-of-type(3){border-right:0}
 }
 @media(max-width:900px){
@@ -160,8 +157,8 @@ html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif}
   .home-page .hero-meta{font-size:12px}
   .home-page .scroll-note{display:none}
   .profile-dock{margin:-34px auto 0;grid-template-columns:1fr}
-  .profile-dock-label{grid-column:auto;flex-direction:column;align-items:flex-start;gap:2px}
-  .profile-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.13);min-height:96px}
+  .profile-dock-label{grid-column:auto;align-items:flex-start;padding:14px 18px}
+  .profile-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.13);min-height:90px}
   .profile-card:last-child{border-bottom:0}
   .home-page .intro{padding-top:100px}
   .home-page #research .section-head{grid-template-columns:1fr;gap:8px}
@@ -182,12 +179,12 @@ html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif}
   .home-page .hero-actions{display:grid;grid-template-columns:1fr}
   .home-page .hero-actions .button{width:100%}
   .profile-dock{width:92vw}
-  .profile-card{padding:18px;grid-template-columns:56px minmax(0,1fr) auto}
-  .profile-logo{width:50px;height:50px;border-radius:13px}
-  .profile-logo img{width:33px;height:33px}
-  .profile-logo-wide img{width:46px;height:auto}
-  .profile-card strong{font-size:16px}
-  .profile-card small{font-size:10px}
+  .profile-card{padding:16px 18px;grid-template-columns:52px minmax(0,1fr) auto;gap:14px}
+  .profile-logo{width:48px;height:48px;border-radius:12px}
+  .profile-logo img{width:31px;height:31px}
+  .profile-logo-wide{width:52px}
+  .profile-logo-wide img{width:44px;height:auto}
+  .profile-card strong{font-size:16.5px}
   .home-page .intro h2{font-size:38px}
   .home-page .research-tags>span{font-size:10px}
   .home-page .quote{padding:90px 7vw}
