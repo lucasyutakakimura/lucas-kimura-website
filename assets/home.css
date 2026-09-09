@@ -53,33 +53,21 @@
 .profile-arrow{font-size:21px;color:#9de0e7;transition:transform .25s ease,color .25s ease}
 .profile-card:hover .profile-arrow{transform:translate(3px,-3px);color:var(--brand)}
 
-.home-page .intro{padding-top:130px;padding-bottom:125px;background:var(--paper)}
+/* Research identity — one concise statement of the site's research concept */
+.home-page .intro{padding-top:126px;padding-bottom:108px;background:var(--paper);scroll-margin-top:88px}
 .home-page .intro .label{color:#5e6d6d}
-.home-page .intro h2{font-size:clamp(38px,5.25vw,78px);max-width:1120px;letter-spacing:-.045em;line-height:1.01;margin-bottom:48px;text-wrap:balance}
+.home-page .intro h2{font-size:clamp(38px,5.15vw,74px);max-width:1100px;letter-spacing:-.043em;line-height:1.03;margin-bottom:44px;text-wrap:balance}
 .home-page .intro h2 em{font-style:italic;color:#0b8da0}
 .home-page .intro .cols{font-size:17px;line-height:1.85;color:#455658;max-width:1020px}
-.home-page .research-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.home-page .research-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:27px}
 .home-page .research-tags>span{border:1px solid #b5bfbb;padding:8px 12px;font-family:Oswald,'Noto Sans JP',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#435355}
 
-.home-page #research{padding-top:125px}
-.home-page #research .section-head{display:grid;grid-template-columns:180px 1fr;align-items:end;gap:30px}
-.home-page #research .section-head .kicker{align-self:start;padding-top:13px;color:#9de0e7}
-.home-page #research .section-head h2{font-size:clamp(58px,8vw,124px);text-transform:none;letter-spacing:-.025em;max-width:1050px}
-.home-page .stories{gap:12px}
-.home-page .stories article{height:min(68vw,670px);min-height:520px}
-.home-page .stories article>img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s ease}
-.home-page .stories article:hover>img{transform:scale(1.045);filter:saturate(1.08)}
-.home-page .stories article:after{background:linear-gradient(0deg,rgba(3,18,21,.96),rgba(3,18,21,.05) 72%)}
-.home-page .stories article>div{left:31px;right:31px;bottom:32px}
-.home-page .stories b{font-size:12px;color:#9de0e7;letter-spacing:.1em}
-.home-page .stories h3{font-size:clamp(35px,3.5vw,57px);letter-spacing:-.015em;text-transform:none}
-.home-page .stories p{font-size:14px;line-height:1.7;color:#c8d8d5}
-
-.home-page .news{background:#cbe8ed;padding-top:115px;padding-bottom:115px}
-.home-page .news .section-head{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(10,30,35,.32);padding-bottom:27px;margin-bottom:0}
-.home-page .news .section-head h2{font-size:clamp(68px,9vw,130px);margin:0;line-height:.8;text-transform:none;letter-spacing:-.025em}
+/* Updates follow the research identity directly; no repeated research explainer block. */
+.home-page .news{background:#cbe8ed;padding-top:102px;padding-bottom:110px;border-top:1px solid rgba(10,32,36,.10)}
+.home-page .news .section-head{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(10,30,35,.32);padding-bottom:24px;margin-bottom:0}
+.home-page .news .section-head h2{font-size:clamp(54px,7.2vw,104px);margin:8px 0 0;line-height:.9;text-transform:none;letter-spacing:-.028em}
 .home-page .news-list{border-top:0}
-.home-page .news-list article{grid-template-columns:170px minmax(0,1fr) 28px;align-items:center;padding:29px 0;transition:padding-left .2s ease}
+.home-page .news-list article{grid-template-columns:170px minmax(0,1fr) 28px;align-items:center;padding:27px 0;transition:padding-left .2s ease}
 .home-page .news-list article:after{content:'↗';font-size:20px;color:#2e6068}
 .home-page .news-list article:hover{padding-left:10px}
 .home-page .news-list time{font-size:12px;color:#4b696d}
@@ -130,9 +118,6 @@ html[data-lang="ja"] .home-page .kicker,
 html[data-lang="ja"] .home-page .intro h2,
 html[data-lang="ja"] .home-page .intro .cols,
 html[data-lang="ja"] .home-page .research-tags>span,
-html[data-lang="ja"] .home-page #research .section-head h2,
-html[data-lang="ja"] .home-page .stories h3,
-html[data-lang="ja"] .home-page .stories p,
 html[data-lang="ja"] .home-page .news-list time,
 html[data-lang="ja"] .home-page .news-list h3,
 html[data-lang="ja"] .home-page .paper-list h3,
@@ -160,11 +145,10 @@ html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif}
   .profile-dock-label{grid-column:auto;align-items:flex-start;padding:14px 18px}
   .profile-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.13);min-height:90px}
   .profile-card:last-child{border-bottom:0}
-  .home-page .intro{padding-top:100px}
-  .home-page #research .section-head{grid-template-columns:1fr;gap:8px}
-  .home-page .stories article{height:560px}
+  .home-page .intro{padding-top:96px;padding-bottom:88px}
+  .home-page .news{padding-top:84px;padding-bottom:90px}
   .home-page .news .section-head{display:block}
-  .home-page .news .section-head h2{margin-top:13px}
+  .home-page .news .section-head h2{margin-top:10px}
   .home-page .news-list article{grid-template-columns:1fr 28px;gap:5px 15px}
   .home-page .news-list time{grid-column:1}
   .home-page .news-list h3{grid-column:1}
@@ -185,11 +169,12 @@ html[data-lang="ja"] .home-page .quote p{font-family:'Noto Serif JP',serif}
   .profile-logo-wide{width:52px}
   .profile-logo-wide img{width:44px;height:auto}
   .profile-card strong{font-size:16.5px}
-  .home-page .intro h2{font-size:38px}
+  .home-page .intro h2{font-size:36px;line-height:1.08;margin-bottom:34px}
   .home-page .research-tags>span{font-size:10px}
+  .home-page .news .section-head h2{font-size:54px}
   .home-page .quote{padding:90px 7vw}
 }
 @media(prefers-reduced-motion:reduce){
   .home-page .hero>img{animation:none}
-  .home-page .stories article>img,.home-page .field-grid img,.profile-card,.profile-logo,.home-page .button{transition:none}
+  .home-page .field-grid img,.profile-card,.profile-logo,.home-page .button{transition:none}
 }
